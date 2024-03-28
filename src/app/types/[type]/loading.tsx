@@ -1,6 +1,7 @@
 import React from "react";
 
 const loading = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const placeholder = [...Array(8)];
   return (
     <div className="grid grid-cols-4 gap-5 p-5 overflow-y-auto">
