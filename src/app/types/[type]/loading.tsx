@@ -1,15 +1,14 @@
 import React from "react";
 
-const loading = () => {
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-  const placeholder = [...Array(8)];
+const Loading = () => {
+  const placeholder: number[] = Array<number>(8).fill(0);
   return (
     <div className="grid grid-cols-4 gap-5 p-5 overflow-y-auto">
-      {placeholder.map((e, idx) => (
+      {placeholder.map((_, idx) => (
         <div key={idx} className="bg-gray-300 rounded h-96"></div>
       ))}
     </div>
   );
 };
 
-export default loading;
+export default Loading;
