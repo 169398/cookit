@@ -50,9 +50,9 @@ function HomeWordsContent() {
           <Button className={buttonVariants()}>
               <Link href="/types">List of Cuisines</Link>
             </Button>
-            <Button className={buttonVariants()}>
-              <Link href="/api/auth/signout">Sign out </Link>
-            </Button>
+            <Button className={`${buttonVariants()} absolute  fixed top-10 right-0 mt-4 ml-4`}>
+  <Link href="/api/auth/signout">Sign out</Link>
+</Button>
 
            
           </>
