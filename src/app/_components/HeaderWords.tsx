@@ -51,7 +51,8 @@ function HomeWordsContent() {
       ) : (
         <Button className={buttonVariants()}            
         >
-          <Link href="/api/auth/signin">Sign Up to View Cuisines</Link>
+          Sign in to View Cuisines 
+👆
         </Button>
       )}
     </div>
