@@ -13,13 +13,7 @@ const Header= () => {
 <h1 className="text-pink-700  text-3xl font-bold text-right  md:block">Cookit</h1>
 </Link>
 
-{/* Sign-in button at the top right corner using Next.js Link */}
 
-<Link className={buttonVariants()}
-            href={session ? "/api/auth/signout" : "/api/auth/signin"}
-          >
-            {session ? "Sign out" : "Sign in"}
-          </Link>
 
 
 

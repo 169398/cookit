@@ -1,5 +1,4 @@
-"use client"
-
+"use client";
 
 import { SessionProvider, useSession } from "next-auth/react";
 import { Button, buttonVariants } from "~/components/ui/button";
@@ -44,17 +43,25 @@ function HomeWordsContent() {
       </p>
       <TypewriterEffect words={words} />
 
-      {session ? (
-        <Button className={buttonVariants()}>
-          <Link href="/types">List of Cuisines</Link>
-        </Button>
-      ) : (
-        <Button className={buttonVariants()}            
-        >
-          Sign in to View Cuisines 
-👆
-        </Button>
-      )}
+      <div>
+        {session ? (
+          <>
+
+          <Button className={buttonVariants()}>
+              <Link href="/types">List of Cuisines</Link>
+            </Button>
+            <Button className={buttonVariants()}>
+              <Link href="/api/auth/signout">Sign out </Link>
+            </Button>
+
+           
+          </>
+        ) : (
+          <Button className={buttonVariants()}>
+            <Link href="/api/auth/signin">Sign in to View Cuisines </Link>
+          </Button>
+        )}
+      </div>
     </div>
   );
 }
