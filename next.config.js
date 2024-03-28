@@ -8,7 +8,11 @@ await import("./src/env.js");
 const config = {
     images:{
         domains:['www.themealdb.com'],
-    }
+    },
+    
+        
+      
+      
 };
 
 export default config;

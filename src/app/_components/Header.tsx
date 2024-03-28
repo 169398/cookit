@@ -1,27 +1,32 @@
 import React from "react";
 import Link from "next/link";
-import { getServerAuthSession } from "~/server/auth";
-const session = await getServerAuthSession();
-
+import { authOptions, getServerAuthSession } from "~/server/auth";
+const session = await getServerAuthSession(authOptions);
+import { Button, buttonVariants } from "~/components/ui/button";
   
 const Header= () => {
-    return <div className=" py-5 bg-slate-300">
-<div>
+    return <div className='fixed top-0 inset-x-0 h-fit bg-zinc-400 border-b border-zinc-300 z-[10] py-2'>
+      <div className='container max-w-7xl h-full mx-auto flex items-center justify-between gap-2'>
+
+       
 <Link href="/">
-<h1 className="text-pink-700  text-3xl font-bold text-right">Cookit</h1>
+<h1 className="text-pink-700  text-3xl font-bold text-right  md:block">Cookit</h1>
 </Link>
 
 {/* Sign-in button at the top right corner using Next.js Link */}
 
-<Link
+<Link className={buttonVariants()}
             href={session ? "/api/auth/signout" : "/api/auth/signin"}
-            className="rounded-full bg-white/10 px-5 py-4 font-semibold no-underline transition hover:bg-slate-400  "
           >
             {session ? "Sign out" : "Sign in"}
           </Link>
-</div>
 
-</div>
+
+
+
+          </div> 
+      </div>
+
         
 }
     

@@ -47,7 +47,7 @@ export default async function Page({ params }: { params: { id: string } }) {
           {ingredients.map((tag, i) => (
             <span
               key={i}
-              className="bg-blue-500 text-white px-2 py-1 inline-block rounded mr-2 mb-2"
+              className="bg-pink-500 text-white px-2 py-1 inline-block rounded mr-2 mb-2"
             >
               {tag}
             </span>
@@ -56,7 +56,7 @@ export default async function Page({ params }: { params: { id: string } }) {
         <div className="tags mt-3">
           <span>Video Link: </span>
           <a
-            className="text-blue-500"
+            className="text-pink-500"
             target="_blank"
             // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
             href={details.strYoutube}

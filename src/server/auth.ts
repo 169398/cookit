@@ -3,6 +3,7 @@ import {
   getServerSession,
   type DefaultSession,
   type NextAuthOptions,
+  Session,
 } from "next-auth";
 import { type Adapter } from "next-auth/adapters";
 import DiscordProvider from "next-auth/providers/discord";
@@ -48,10 +49,12 @@ export const authOptions: NextAuthOptions = {
   },
   adapter: PrismaAdapter(db) as Adapter,
   providers: [
+
     DiscordProvider({
       clientId: env.DISCORD_CLIENT_ID,
       clientSecret: env.DISCORD_CLIENT_SECRET,
     }),
+    
     /**
      * ...add more providers here.
      *
@@ -69,4 +72,12 @@ export const authOptions: NextAuthOptions = {
  *
  * @see https://next-auth.js.org/configuration/nextjs
  */
-export const getServerAuthSession = () => getServerSession(authOptions);
+export const getServerAuthSession = async (authOptions: NextAuthOptions): Promise<Session | null> => {
+  try {
+    const session = await getServerSession(authOptions);
+    return session;
+  } catch (error) {
+    console.error('Error fetching server auth session:', error);
+    return null;
+  }
+};
